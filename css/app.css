@@ -17,11 +17,16 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('../img/gaming-pattern.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
 }
 
+
 .container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,8 +34,9 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-weight: 600;
+    font-size: 2.8em;
 }
 
 /*
@@ -38,9 +44,9 @@ h1 {
  */
 
 .deck {
-    width: 660px;
-    min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    width: 600px;
+    min-height: 600px;
+    background: linear-gradient(180deg, #f4dc26 60%, #E1F5A9);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -49,36 +55,66 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin: 0 0 3em;
+    list-style: none;
 }
 
 .deck .card {
-    height: 125px;
-    width: 125px;
+    height: 110px;
+    width: 110px;
     background: #2e3d49;
-    font-size: 0;
     color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    transition: transform 0.6s;
+
 }
+
+.deck .card:hover{
+  transform: rotateY(35deg);
+}
+
+.deck .card img{
+    display: none;
+}
+
 
 .deck .card.open {
     transform: rotateY(0);
-    background: #02b3e4;
+    background: white;
     cursor: default;
+}
+
+.deck .card.open  img{
+    display:inline;
+    height: 70%;
+}
+
+.deck .card.show img{
+    height: 70%;
+    display:inline;
 }
 
 .deck .card.show {
-    font-size: 33px;
+    background-color: white;
 }
 
-.deck .card.match {
+.deck .card .match {
     cursor: default;
-    background: #02ccba;
-    font-size: 33px;
+}
+
+.deck .card .match img {
+    cursor: default;
+    height: 70%;
+    display:inline;
+}
+
+.deck .card.match img{
+    height: 70%;
+    display:inline;
 }
 
 /*
@@ -86,9 +122,11 @@ h1 {
  */
 
 .score-panel {
-    text-align: left;
-    width: 345px;
-    margin-bottom: 10px;
+  font-family: 'Love Ya Like A Sister', cursive;
+  text-align: left;
+  width: 345px;
+  font-size: 22px;
+
 }
 
 .score-panel .stars {
@@ -101,6 +139,12 @@ h1 {
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
+}
+
+.score-panel .timer {
+    float: right;
+    cursor: inline-block;
+    margin-right: 10%;
 }
 
 .score-panel .restart {
